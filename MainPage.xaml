@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.MainPage"
+             Title="Novo Evento"
+             BackgroundColor="#F3F6FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="22,25"
+                             Spacing="18">
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Planeje seu evento"
+                       FontSize="29"
+                       FontAttributes="Bold"
+                       TextColor="#172B4D"/>
+
+                <Label Text="Preencha as informações para criar um novo evento."
+                       FontSize="14"
+                       TextColor="#718096"/>
+            </VerticalStackLayout>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E1E7EF"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="13">
+
+                    <Label Text="INFORMAÇÕES GERAIS"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           TextColor="#2563EB"/>
+
+                    <Label Text="Nome do evento"
+                           TextColor="#334155"
+                           FontAttributes="Bold"/>
+
+                    <Entry x:Name="txt_nome"
+                           Placeholder="Ex.: Feira de Tecnologia"
+                           BackgroundColor="#F3F6FA"
+                           TextColor="#172B4D"
+                           PlaceholderColor="#94A3B8"/>
+
+                    <Label Text="Local do evento"
+                           TextColor="#334155"
+                           FontAttributes="Bold"/>
+
+                    <Entry x:Name="txt_local"
+                           Placeholder="Ex.: Centro de Convenções"
+                           BackgroundColor="#F3F6FA"
+                           TextColor="#172B4D"
+                           PlaceholderColor="#94A3B8"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E1E7EF"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="13">
+
+                    <Label Text="PERÍODO DO EVENTO"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           TextColor="#2563EB"/>
+
+                    <Label Text="Data de início"
+                           FontAttributes="Bold"
+                           TextColor="#334155"/>
+
+                    <DatePicker x:Name="dt_inicio"
+                                Format="dd/MM/yyyy"
+                                TextColor="#172B4D"
+                                BackgroundColor="#F3F6FA"
+                                DateSelected="DataInicio_Alterada"/>
+
+                    <Label Text="Data de término"
+                           FontAttributes="Bold"
+                           TextColor="#334155"/>
+
+                    <DatePicker x:Name="dt_termino"
+                                Format="dd/MM/yyyy"
+                                TextColor="#172B4D"
+                                BackgroundColor="#F3F6FA"/>
+
+                    <Label Text="A data de término deve ser igual ou posterior ao início."
+                           FontSize="12"
+                           TextColor="#64748B"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Border BackgroundColor="White"
+                    Stroke="#E1E7EF"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="13">
+
+                    <Label Text="PARTICIPANTES E CUSTOS"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           TextColor="#2563EB"/>
+
+                    <Label Text="Número de participantes"
+                           FontAttributes="Bold"
+                           TextColor="#334155"/>
+
+                    <Entry x:Name="txt_participantes"
+                           Placeholder="Ex.: 50"
+                           Keyboard="Numeric"
+                           BackgroundColor="#F3F6FA"
+                           TextColor="#172B4D"/>
+
+                    <Label Text="Custo por participante (R$)"
+                           FontAttributes="Bold"
+                           TextColor="#334155"/>
+
+                    <Entry x:Name="txt_custo"
+                           Placeholder="Ex.: 25,50"
+                           Keyboard="Numeric"
+                           BackgroundColor="#F3F6FA"
+                           TextColor="#172B4D"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="CRIAR EVENTO"
+                    BackgroundColor="#2563EB"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="12"
+                    HeightRequest="58"
+                    Clicked="Button_Clicked"/>
+
+            <Label Text="Organize seus eventos de forma simples."
+                   HorizontalOptions="Center"
+                   TextColor="#94A3B8"
+                   FontSize="12"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

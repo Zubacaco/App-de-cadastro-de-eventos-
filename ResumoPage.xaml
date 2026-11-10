@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.ResumoPage"
+             Title="Resumo do Evento"
+             BackgroundColor="#F4F6F9">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15">
+
+            <Label Text="Resumo do Evento"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#174EA6"
+                   HorizontalOptions="Center"
+                   Margin="0,15,0,20"/>
+
+            <Border BackgroundColor="White"
+                    Stroke="#DDDDDD"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="{Binding Nome, StringFormat='Evento: {0}'}"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#174EA6"/>
+
+                    <Label Text="{Binding DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}"
+                           TextColor="Black"/>
+
+                    <Label Text="{Binding DataTermino, StringFormat='Término: {0:dd/MM/yyyy}'}"
+                           TextColor="Black"/>
+
+                    <Label Text="{Binding DuracaoDias, StringFormat='Duração: {0} dias'}"
+                           TextColor="Black"/>
+
+                    <Label Text="{Binding NumeroParticipantes, StringFormat='Participantes: {0}'}"
+                           TextColor="Black"/>
+
+                    <Label Text="{Binding Local, StringFormat='Local: {0}'}"
+                           TextColor="Black"/>
+
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='Custo por participante: {0:C2}'}"
+                           TextColor="Black"/>
+
+                    <BoxView HeightRequest="1"
+                             Color="#DDDDDD"/>
+
+                    <Label Text="{Binding CustoTotal, StringFormat='Custo total: {0:C2}'}"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="#174EA6"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="VOLTAR AO CADASTRO"
+                    BackgroundColor="#174EA6"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="55"
+                    Margin="0,20,0,0"
+                    Clicked="Voltar_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
